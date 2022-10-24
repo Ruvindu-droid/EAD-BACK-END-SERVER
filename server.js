@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 
 //Add New Routes Below the Following >>>>>>>>>>>>>>>>
 const SiteRoute = require('./src/routes/route.site');
+const SiteNormalUser = require('./src/routes/route.normaluser');
 
 
 
@@ -48,6 +49,7 @@ app.route('/').get((req, res) => {
 
 
 app.use('/site', SiteRoute());
+app.use('/normaluser', SiteNormalUser());
 
 app.listen(PORT, () => {
     console.log('######################################################');
