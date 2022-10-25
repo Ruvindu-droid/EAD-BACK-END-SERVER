@@ -229,6 +229,17 @@ const StationQincreaseSpecialFunction = async (req, res) => {
 // Please Enter your Newly Implimented Methords Below the Following Line. (Please Don't edit above)
 //-----------------------------------------------------------------------
 
+//update function >>
+
+const updateDetailsById = async(req, res) => {
+    const { slug } = req.params
+    const {stationname, petrolarrivaltime, petrolfinishtime, dieselarrivaltime, dieselfinishtime, status} = req.body
+    Station.findOneAndUpdate({slug}, {stationname, petrolarrivaltime, petrolfinishtime, dieselarrivaltime, dieselfinishtime, status}, {new: true})
+        .exec((err,Station) => {
+            if(err) console.log(err)
+            res.json(Station);
+        })
+};
 
 
 
@@ -246,6 +257,7 @@ module.exports = {
     stationincreaseQAmountRByname,
     stationdecreaseQAmountRByname,
     StationQdecreaseSpecialFunction,
-    StationQincreaseSpecialFunction
+    StationQincreaseSpecialFunction,
+    updateDetailsById
 
 }
