@@ -106,6 +106,43 @@ const normalUserDeleteByNumber = async (req, res) => {
 //------------------------------------------------------------------------------------------
 
 
+//R.K Testing Space Four SPECIAL ------------------------------------------------------------------
+
+const normalUserByNumber2 = async (req, res) => {
+    
+    const query = {
+        vehicleID: req.body.vehicleID
+    }
+
+    NormalUser.findOne(query, (err, result) => {
+
+        if (result != null) {
+
+            const objToSend = {
+                vehicleID: result.vehicleID,
+                arrivalTime: result.arrivalTime,
+                depatutrTime: result.depatutrTime,
+                vehicleType: result.vehicleType,
+                stationName: result.stationName,
+            }
+
+            res.status(200).send(JSON.stringify(objToSend))
+
+        } else {
+            res.status(404).send()
+        }
+
+    })
+
+};
+
+
+//------------------------------------------------------------------------------------------
+
+
+
+
+
 // Working- Tested >>
 
 const createNormalUser = async (req, res) => {
@@ -198,6 +235,40 @@ const countNormalUsers = (req, res) => {
     });
 };
 
+//=================================test praveena
+
+const getLastDateRecord = async (req, res) => {
+
+    //working t1
+    // NormalUser.findOne({}, {}, { sort: { 'createdAt' : 1 } }, function(err, date) {
+    //     console.log( date );
+    //   });
+
+    //Working t2.1
+const name="VV";
+    NormalUser.findOne({stationName:name}, {}, { sort: { 'createdAt' : 1 } }, function(err, date) {
+        console.log( date );
+      });
+
+      // t2.1
+// const name=stationName;
+// const name  = req.params.stationName
+
+// const query = {
+//     stationName: req.body.stationName
+// }
+
+//     NormalUser.findOne(query, {}, { sort: { 'createdAt' : 1 } }, function(err, date) {
+//         console.log( date );
+//       });
+
+    // NormalUser.findOne({"stationName":stationName }).sort({createdAt: 1}).exec(function(err, date) { 
+    //     console.log( date );
+    //  });
+
+};
+
+//=============================
 
 module.exports = {
     createNormalUser,
@@ -208,5 +279,6 @@ module.exports = {
     countNormalUsers,
     normalUserByNumber,
     createRuNormalUser,
-    normalUserDeleteByNumber
+    normalUserDeleteByNumber,
+    getLastDateRecord
 }

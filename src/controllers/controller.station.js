@@ -226,14 +226,31 @@ const StationQincreaseSpecialFunction = async (req, res) => {
 //------------------------------------------------------------------------------------------
 
 
+//R.K Testing Space Seventh -------------------------------------------------------------------
+
+// Working- Tested >>
+const getAllStations = (req, res) => {
+    let order = req.query.order ? req.query.order : 'asc'
+    let sortBy = req.query.sortBy ? req.query.sortBy : '_id'
+
+    Station.find()
+        .sort([[sortBy, order]])
+        .exec((err, Station) => {
+            if(err) {
+                return res.status(400).json ({
+                    error: 'No data Found'
+                });
+            }
+            res.json(Station);
+        });
+}
+
+//------------------------------------------------------------------------------------------
+
+
+
 // Please Enter your Newly Implimented Methords Below the Following Line. (Please Don't edit above)
 //-----------------------------------------------------------------------
-
-
-
-
-
-
 
 
 
@@ -246,6 +263,7 @@ module.exports = {
     stationincreaseQAmountRByname,
     stationdecreaseQAmountRByname,
     StationQdecreaseSpecialFunction,
-    StationQincreaseSpecialFunction
+    StationQincreaseSpecialFunction,
+    getAllStations
 
 }

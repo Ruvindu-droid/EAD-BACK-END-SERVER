@@ -11,6 +11,7 @@ module.exports = function () {
     router.post('/decrment-r-queue-by-name', controller_station.stationdecreaseQAmountRByname);
     router.post('/decrment-r-queue-by-special-function', controller_station.StationQdecreaseSpecialFunction);
     router.post('/increment-r-queue-by-special-function', controller_station.StationQincreaseSpecialFunction);
+    router.post('/get-r-all-station', controller_station.getAllStations);
 
     return router;
 }

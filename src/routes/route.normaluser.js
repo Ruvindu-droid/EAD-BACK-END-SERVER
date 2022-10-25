@@ -23,5 +23,9 @@ module.exports = function () {
 
     router.post('/Delete-R-normal-user-by-vehicle-number', controller_normaluser.normalUserDeleteByNumber);
 
+    //prav test
+    router.get('/get-last-date', controller_normaluser.getLastDateRecord);    
+
+
     return router;
 }
