@@ -58,7 +58,7 @@ const createRuStation = (req, res) => {
 
 
 //R.K Testing Space Two --------------------------------------------------------------------
-//REtrive the fuel station details by the station name
+//Retrieve the fuel station details by the station name
 const stationRByname = async (req, res) => {
     
     const query = {
@@ -242,7 +242,7 @@ const StationQincreaseSpecialFunction = async (req, res) => {
 
 
 //R.K Testing Space Seventh -------------------------------------------------------------------
-//REtrive all station details
+//Retrieve all station details
 
 // Working- Tested >>
 const getAllStations = (req, res) => {
@@ -262,7 +262,7 @@ const getAllStations = (req, res) => {
 }
 
 //update function >>
-//Update a user details by considering the document id from the database
+//Update a station details by considering the document id from the database
 
 const updateDetailsById = async(req, res) => {
     const { slug } = req.params

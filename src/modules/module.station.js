@@ -8,7 +8,7 @@
  *** This .js file is implemented for :-
 Create database schema for station
 
- Author(s): Ruvindu Kaushalya(Leader), Nethmi Hansika, Praveena Thavarajah (THis .js file is commonly used by all the three 
+ Author(s): Ruvindu Kaushalya(Leader), Nethmi Hansika, Praveena Thavarajah (This .js file is commonly used by all the three 
     members to continue the implementation of relevant functions)
 
  ============================================================================================================================
