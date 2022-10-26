@@ -24,8 +24,10 @@ module.exports = function () {
     router.post('/Delete-R-normal-user-by-vehicle-number', controller_normaluser.normalUserDeleteByNumber);
 
     //prav test
-    router.get('/get-last-date', controller_normaluser.getLastDateRecord);    
+    router.post('/get-last-date', controller_normaluser.getLastDateRecord);    
 
+    //Ruvi Again
+    router.post('/get-last-R-date-By-Station-Name', controller_normaluser.getEarliestRDateRecordByStationID);  
 
     return router;
 }

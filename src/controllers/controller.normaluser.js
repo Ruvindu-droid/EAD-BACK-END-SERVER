@@ -270,6 +270,42 @@ const name="VV";
 
 //=============================
 
+//R.K Testing Space FIVE SPECIAL ------------------------------------------------------------------
+
+
+const getEarliestRDateRecordByStationID = async (req, res) => {
+    
+    const name= req.body.stationName;
+    NormalUser.findOne({stationName:name}, {}, { sort: { 'createdAt' : 1 } }, function(err, result) {
+
+        if (result != null) {
+
+            const objToSend = {
+                vehicleID: result.vehicleID,
+                arrivalTime: result.arrivalTime,
+                depatutrTime: result.depatutrTime,
+                vehicleType: result.vehicleType,
+                stationName: result.stationName,
+                createdAt: result.createdAt,
+                updatedAt: result.updatedAt,
+            }
+
+            res.status(200).send(JSON.stringify(objToSend))
+
+        } else {
+            res.status(404).send()
+        }
+
+      });
+
+};
+
+//---------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 module.exports = {
     createNormalUser,
     normalUserById,
@@ -280,5 +316,6 @@ module.exports = {
     normalUserByNumber,
     createRuNormalUser,
     normalUserDeleteByNumber,
-    getLastDateRecord
+    getLastDateRecord,
+    getEarliestRDateRecordByStationID
 }
