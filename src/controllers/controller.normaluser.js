@@ -235,40 +235,20 @@ const countNormalUsers = (req, res) => {
     });
 };
 
-//=================================test praveena
+//=================================Test praveena (Working - Just for a testing Purpose)==============
 
 const getLastDateRecord = async (req, res) => {
 
-    //working t1
-    // NormalUser.findOne({}, {}, { sort: { 'createdAt' : 1 } }, function(err, date) {
-    //     console.log( date );
-    //   });
-
-    //Working t2.1
+    
 const name="VV";
     NormalUser.findOne({stationName:name}, {}, { sort: { 'createdAt' : 1 } }, function(err, date) {
         console.log( date );
       });
 
-      // t2.1
-// const name=stationName;
-// const name  = req.params.stationName
-
-// const query = {
-//     stationName: req.body.stationName
-// }
-
-//     NormalUser.findOne(query, {}, { sort: { 'createdAt' : 1 } }, function(err, date) {
-//         console.log( date );
-//       });
-
-    // NormalUser.findOne({"stationName":stationName }).sort({createdAt: 1}).exec(function(err, date) { 
-    //     console.log( date );
-    //  });
 
 };
 
-//=============================
+//====================================================================================================
 
 //R.K Testing Space FIVE SPECIAL ------------------------------------------------------------------
 
