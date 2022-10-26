@@ -1,3 +1,17 @@
+/**
+ ==================================================================================================================================
+ HEADER COMMENT BLOCK FOR THIS SPECIFIC .JS FILE
+
+ App:- SMART FUEL APP
+ For:- EAD Module Related Development - Sri Lankan Institute of Information Technology
+
+ *** This .js file is implemented for :-
+Define the path to route .js file
+
+ Author(s): Ruvindu Kaushalya(Leader), Nethmi Hansika, Praveena Thavarajah (This .js file is commonly used by all the three members)
+
+ ====================================================================================================================================
+ **/
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
@@ -50,6 +64,7 @@ app.route('/').get((req, res) => {
 app.use('/normaluser', SiteNormalUser());
 app.use('/station', SiteStation());
 
+//Listening to port 3000, by incoming requests
 app.listen(PORT, () => {
     console.log('######################################################');
     console.log(`Server is ON and running on PORT : ${PORT}`);

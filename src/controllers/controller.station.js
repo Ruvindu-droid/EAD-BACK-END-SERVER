@@ -1,3 +1,18 @@
+/**
+ ============================================================================================================================
+ HEADER COMMENT BLOCK FOR THIS SPECIFIC .JS FILE
+
+ App:- SMART FUEL APP
+ For:- EAD Module Related Development - Sri Lankan Institute of Information Technology
+
+ *** This .js file is implemented for :-
+Define the functions which are invoked by the route.station.js file
+
+ Author(s): Ruvindu Kaushalya(Leader), Nethmi Hansika, Praveena Thavarajah (This .js file is commonly used by all the three 
+    members)
+
+ ============================================================================================================================
+ **/
 const Station = require('../modules/module.station');
 const {next} = require("lodash");
 
@@ -5,7 +20,7 @@ const {next} = require("lodash");
 
 
 // R.K Testing Space -----------------------------------------------------------------------
-
+//Add a new station to the mobile application database
 const createRuStation = (req, res) => {
     const {stationname, petrolarrivaltime, petrolfinishtime, dieselarrivaltime,dieselfinishtime,status,queue} = req.body
     
@@ -43,7 +58,7 @@ const createRuStation = (req, res) => {
 
 
 //R.K Testing Space Two --------------------------------------------------------------------
-
+//REtrive the fuel station details by the station name
 const stationRByname = async (req, res) => {
     
     const query = {
@@ -79,7 +94,7 @@ const stationRByname = async (req, res) => {
 
 
 //R.K Testing Space Three ------------------------------------------------------------------
-
+//Increment the specific station queue depending on the new vehicle entry
 const stationincreaseQAmountRByname = async (req, res) => {
     
     const query = {
@@ -112,7 +127,7 @@ const stationincreaseQAmountRByname = async (req, res) => {
 
 
 //R.K Testing Space Four -------------------------------------------------------------------
-
+//Decrease the specific station queue depending on the removal of a vehicle entry from the queue
 const stationdecreaseQAmountRByname = async (req, res) => {
     
     const query = {
@@ -146,7 +161,7 @@ const stationdecreaseQAmountRByname = async (req, res) => {
 
 
 //R.K Testing Space Five -- Special Methord Used / TestedWorking ------------------------
-
+//Decrease the specific station queue depending on the removal of a vehicle entry from the queue
 const StationQdecreaseSpecialFunction = async (req, res) => {
     
     const query = {
@@ -187,7 +202,7 @@ const StationQdecreaseSpecialFunction = async (req, res) => {
 
 
 //R.K Testing Space Six -- Special Methord Used / TestedWorking ------------------------
-
+//Increment the specific station queue depending on the new vehicle entry
 const StationQincreaseSpecialFunction = async (req, res) => {
     
     const query = {
@@ -227,6 +242,7 @@ const StationQincreaseSpecialFunction = async (req, res) => {
 
 
 //R.K Testing Space Seventh -------------------------------------------------------------------
+//REtrive all station details
 
 // Working- Tested >>
 const getAllStations = (req, res) => {
@@ -246,6 +262,7 @@ const getAllStations = (req, res) => {
 }
 
 //update function >>
+//Update a user details by considering the document id from the database
 
 const updateDetailsById = async(req, res) => {
     const { slug } = req.params

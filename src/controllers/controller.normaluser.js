@@ -1,3 +1,18 @@
+/**
+ ============================================================================================================================
+ HEADER COMMENT BLOCK FOR THIS SPECIFIC .JS FILE
+
+ App:- SMART FUEL APP
+ For:- EAD Module Related Development - Sri Lankan Institute of Information Technology
+
+ *** This .js file is implemented for :-
+Define the functions which are invoked by the route.normaluser.js file
+
+ Author(s): Ruvindu Kaushalya(Leader), Nethmi Hansika, Praveena Thavarajah (This .js file is commonly used by all the three 
+    members)
+
+ ============================================================================================================================
+ **/
 const NormalUser = require('../modules/module.normaluser');
 const {next} = require("lodash");
 
@@ -5,7 +20,7 @@ const {next} = require("lodash");
 
 
 // R.K Testing Space -----------------------------------------------------------------------
-
+//create a new vehicle entry (to the mobile application database) to the queue
 const createRuNormalUser = (req, res) => {
     const {vehicleID, arrivalTime, depatutrTime, vehicleType, stationName} = req.body
     
@@ -47,7 +62,7 @@ const createRuNormalUser = (req, res) => {
 
 //R.K Testing Space Two --------------------------------------------------------------------
 
-
+//Get the available users details in the queue by using the vehicle number
 const normalUserByNumber = async (req, res) => {
     
     const query = {
@@ -79,7 +94,7 @@ const normalUserByNumber = async (req, res) => {
 //------------------------------------------------------------------------------------------
 
 //R.K Testing Space Three ------------------------------------------------------------------
-
+//Remove the user from the queue by considering the vehicle number from the fuel queue
 const normalUserDeleteByNumber = async (req, res) => {
     
     const query = {
@@ -107,7 +122,7 @@ const normalUserDeleteByNumber = async (req, res) => {
 
 
 //R.K Testing Space Four SPECIAL ------------------------------------------------------------------
-
+//Get details about the normal user by considering the vehicle number as the input data
 const normalUserByNumber2 = async (req, res) => {
     
     const query = {
@@ -144,7 +159,7 @@ const normalUserByNumber2 = async (req, res) => {
 
 
 // Working- Tested >>
-
+//Create a new vehicle entry to the existing fuel queue of a specific fuel station
 const createNormalUser = async (req, res) => {
 
     //validate vehicle id from db
@@ -172,6 +187,7 @@ const createNormalUser = async (req, res) => {
 
 
 // Working- Tested >>
+//Get the list of all the users who are available at the fuel queue
 const getAllNormalUsers = (req, res) => {
     let order = req.query.order ? req.query.order : 'asc'
     let sortBy = req.query.sortBy ? req.query.sortBy : '_id'
@@ -191,6 +207,7 @@ const getAllNormalUsers = (req, res) => {
 
 
 // Working- Tested >>
+//Retrieve a user by considering the document id from the database
 const normalUserById = async (req, res) => {
     NormalUser.findById(req.params.id, (error, data) =>{
         if (error) {
@@ -203,6 +220,7 @@ const normalUserById = async (req, res) => {
 
 
 // Working- Tested >>
+//Update a user details by considering the document id from the database
 const updateNormalUserById = async(req, res) => {
     const { slug } = req.params
     const {vehicleID, arrivalTime, depatutrTime, vehicleType, stationName} = req.body
@@ -215,6 +233,7 @@ const updateNormalUserById = async(req, res) => {
 
 
 // Working- Tested >>
+//Delete a user record by considering the document id from the database
 const deleteNormalUserById = async (req, res) => {
     const id  = req.params.id
     await NormalUser.findByIdAndRemove(id).exec()
@@ -225,6 +244,7 @@ const deleteNormalUserById = async (req, res) => {
 
 
 // Working- Tested >>
+//Count the number of users available in the fuel queue
 const countNormalUsers = (req, res) => {
     NormalUser.count({ }, function(err, result) {
         if (err) {
@@ -236,7 +256,7 @@ const countNormalUsers = (req, res) => {
 };
 
 //=================================Test praveena (Working - Just for a testing Purpose)==============
-
+//Retrieve the time and date of a specific fuel station of the last user in the queue
 const getLastDateRecord = async (req, res) => {
 
     
@@ -251,7 +271,7 @@ const name="VV";
 //====================================================================================================
 
 //R.K Testing Space FIVE SPECIAL ------------------------------------------------------------------
-
+//Retrieve the date and time of the user, who entered the queue at last for a specific station
 
 const getEarliestRDateRecordByStationID = async (req, res) => {
     

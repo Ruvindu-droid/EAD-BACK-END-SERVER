@@ -1,3 +1,18 @@
+/**
+ ============================================================================================================================
+ HEADER COMMENT BLOCK FOR THIS SPECIFIC .JS FILE
+
+ App:- SMART FUEL APP
+ For:- EAD Module Related Development - Sri Lankan Institute of Information Technology
+
+ *** This .js file is implemented for :-
+Define the path to routes of normal user
+
+ Author(s): Ruvindu Kaushalya(Leader), Nethmi Hansika, Praveena Thavarajah (This .js file is commonly used by all the three 
+    members to define the routes for implemented functions)
+
+ ============================================================================================================================
+ **/
 const express = require('express');
 const router = express.Router();
 const controller_normaluser = require('../controllers/controller.normaluser');
